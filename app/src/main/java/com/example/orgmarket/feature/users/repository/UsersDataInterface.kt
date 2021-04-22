@@ -4,7 +4,11 @@ import com.example.orgmarket.feature.users.data.Users
 
 interface UsersDataInterface {
 
-    suspend fun getAll(): List<Users>
+    companion object {
+        var self = UsersDataInterface
+    }
+
+    fun getAll(): Unit
 
     suspend fun get(id: Long): Users?
 }
